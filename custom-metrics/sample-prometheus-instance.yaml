@@ -42,7 +42,7 @@ metadata:
     prometheus: sample-metrics-prom
 spec:
   replicas: 1
-  baseImage: luxas/prometheus
+  baseImage: onorua/prometheus
   version: v1.7.1
   serviceAccountName: prometheus
   serviceMonitorSelector:

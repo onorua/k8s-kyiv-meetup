@@ -27,7 +27,7 @@ spec:
         effect: NoExecute
         tolerationSeconds: 0
       containers:
-      - image: luxas/autoscale-demo:v0.1.2
+      - image: onorua/autoscale-demo:v0.1.2
         name: sample-metrics-app
         ports:
         - name: web
