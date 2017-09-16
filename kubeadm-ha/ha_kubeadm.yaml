@@ -1,0 +1,25 @@
+kind: MasterConfiguration
+apiVersion: kubeadm.k8s.io/v1alpha1
+networking:
+  podSubnet: "10.244.0.0/16"
+controllerManagerExtraArgs:
+  horizontal-pod-autoscaler-use-rest-clients: "true"
+  horizontal-pod-autoscaler-sync-period: "10s"
+  node-monitor-grace-period: "10s"
+apiServerExtraArgs:
+  runtime-config: "api/all=true"
+  feature-gates: "TaintBasedEvictions=true"
+  admission-control: "NamespaceLifecycle,LimitRanger,ServiceAccount,PersistentVolumeLabel,DefaultStorageClass,ResourceQuota,DefaultTolerationSeconds"
+kubernetesVersion: "stable-1.7"
+etcd:
+  endpoints:
+  - http://138.197.6.255:2379
+  - http://174.138.70.103:2379
+  - http://174.138.74.173:2379
+apiServerCertSANs:
+ - molochko-kubeadm-master-02
+ - molochko-kubeadm-master-03
+ - 138.197.6.255
+ - 174.138.70.103
+ - 174.138.74.173
+ - 127.0.0.1
